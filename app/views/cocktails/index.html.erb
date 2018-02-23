@@ -1,0 +1,38 @@
+<h1> Show all the Cocktails </h1>
+
+<% @cocktails.each do |d| %>
+
+
+
+
+<div class="container">
+  <div class="info">
+    <h1>Article News Card</h1><span>Made with <i class='fa fa-heart animated infinite pulse'></i> by <a href='http://andy.design'>Andy Tran</a> | Designed by <a href='http://justinkwak.com'>JustinKwak</a></span>
+  </div>
+  <!-- Normal Demo-->
+  <div class="column">
+    <div class="demo-title">Normal</div>
+    <!-- Post-->
+    <div class="post-module">
+      <!-- Thumbnail-->
+      <div class="thumbnail">
+        <div class="date">
+          <div class="day"> Create at:</div>
+          <div class="day"> <%= d.created_at.day %> </div>
+          <div class="month"> <%= Date::MONTHNAMES[d.created_at.month] %>  </div>
+        </div><img src="https://s3-us -west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"/>
+      </div>
+      <!-- Post Content-->
+      <div class="post-content">
+        <div class="category">Photos</div>
+        <h1 class="title"> <%= link_to d.name, cocktail_path(d) %></h1>
+        <ul>
+
+          <p class="description">Here should go the ingredients</p>
+         </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
